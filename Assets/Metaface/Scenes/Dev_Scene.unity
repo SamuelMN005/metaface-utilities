@@ -123,10 +123,20 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &34714342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7925502311421774700, guid: 7a0fccc8aaf1e1c4f81380c6ad376bce, type: 3}
+  m_PrefabInstance: {fileID: 7925502310792175953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &364362354 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8532926147857214124, guid: 5e275ee271aa53a4eba77a1cf45b4097, type: 3}
   m_PrefabInstance: {fileID: 8532926148001288497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &468533553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7925502311493363754, guid: 7a0fccc8aaf1e1c4f81380c6ad376bce, type: 3}
+  m_PrefabInstance: {fileID: 7925502310792175953}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &747352845
 GameObject:
@@ -183,6 +193,8 @@ GameObject:
   - component: {fileID: 956899247}
   - component: {fileID: 956899248}
   - component: {fileID: 956899249}
+  - component: {fileID: 956899250}
+  - component: {fileID: 956899251}
   m_Layer: 0
   m_Name: Helpers
   m_TagString: Untagged
@@ -249,6 +261,110 @@ MonoBehaviour:
   onEyeOpen:
     m_PersistentCalls:
       m_Calls: []
+  onBlink:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &956899250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956899246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65061de374fc19d4d9b3c0fb516da364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faceExpressions: {fileID: 8532926148001288498}
+  useFixedUpdate: 0
+  maxEyesClosedTime: 1
+  blinkParameters:
+  - faceExpression: 12
+    threshold: 0.5
+  verbose: 0
+  onEyeClose:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 468533553}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEyeOpen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 468533553}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onBlink:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &956899251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956899246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65061de374fc19d4d9b3c0fb516da364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faceExpressions: {fileID: 8532926148001288498}
+  useFixedUpdate: 0
+  maxEyesClosedTime: 1
+  blinkParameters:
+  - faceExpression: 13
+    threshold: 0.5
+  verbose: 0
+  onEyeClose:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 34714342}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEyeOpen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 34714342}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onBlink:
     m_PersistentCalls:
       m_Calls: []
@@ -3739,6 +3855,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 364362354}
+    - target: {fileID: 4780809724641960667, guid: ef1757321b0c95d4798efe9c906988de, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4780809724641960740, guid: ef1757321b0c95d4798efe9c906988de, type: 3}
       propertyPath: faceExpressions
       value: 
@@ -4109,7 +4229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5175109555813328577
 Transform:
   m_ObjectHideFlags: 0
@@ -7338,6 +7458,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8532926147847576054, guid: 5e275ee271aa53a4eba77a1cf45b4097, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532926147847576054, guid: 5e275ee271aa53a4eba77a1cf45b4097, type: 3}
       propertyPath: RotateAroundGuardianCenter
       value: 0
       objectReference: {fileID: 0}
@@ -7351,6 +7475,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8532926147847576062, guid: 5e275ee271aa53a4eba77a1cf45b4097, type: 3}
       propertyPath: requestFaceTrackingPermissionOnStartup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532926147847769524, guid: 5e275ee271aa53a4eba77a1cf45b4097, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532926147853228508, guid: 5e275ee271aa53a4eba77a1cf45b4097, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8532926147857214124, guid: 5e275ee271aa53a4eba77a1cf45b4097, type: 3}
